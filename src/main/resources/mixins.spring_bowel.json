@@ -1,0 +1,16 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.wan.minecraft.springBowel.mixin",
+  "mixins": [
+    "MixinEntityAICreeperSwell",
+    "MixinEntityCreeper"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mixins.spring_bowel.refmap.json"
+}

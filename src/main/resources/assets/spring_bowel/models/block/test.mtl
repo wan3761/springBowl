@@ -1,0 +1,8 @@
+# Made in Blockbench 4.5.2
+newmtl m_ac1cc4b9-c4f2-bda6-e118-ccf6f22a8870
+map_Kd spring_bowel:blocks/yellow
+newmtl m_2f615906-5e22-1997-3f0f-66e409f5a840
+map_Kd spring_bowel:blocks/front
+newmtl m_c2df54b8-0c8c-5f2c-03fc-f6595cb6bcab
+map_Kd spring_bowel:blocks/up
+newmtl none

@@ -1,0 +1,16 @@
+{
+  "a_sound": {
+    "category": "block",
+    "subtitle": "spring_bowel.a_sound",
+    "sounds": [
+      "spring_bowel:music/cyj_no_xiao"
+    ]
+  },
+  "pujipa_sound": {
+    "category": "block",
+    "subtitle": "spring_bowel.pujipa_sound",
+    "sounds": [
+      "spring_bowel:music/pujipa"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "normal": {
+      "model": "spring_bowel:test.obj",
+      "custom": {
+        "flip-v": true
+      }
+    }
+  }
+}
