@@ -123,4 +123,5 @@ mixin {
     // MixinGradle 设置
     add sourceSets.main, 'mixins.spring_bowel.refmap.json'
     config 'mixins.spring_bowel.json'
+
 }

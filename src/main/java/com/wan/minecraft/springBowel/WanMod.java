@@ -18,7 +18,7 @@ public class WanMod {
 
     public static final String MODID = "spring_bowel";
     public static final String NAME = "Happy New Year";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "2.5.1";
 
     public static Logger logger;
 
@@ -29,13 +29,12 @@ public class WanMod {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
     }
 
 
     @EventHandler
-    public void postload(FMLPostInitializationEvent event) {
+    public void postLoad(FMLPostInitializationEvent event) {
 
     }
 }

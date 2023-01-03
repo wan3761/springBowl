@@ -1,11 +1,15 @@
 {
   "forge_marker": 1,
+  "defaults": {
+    "model": "spring_bowel:test.obj",
+    "custom": {"flip-v": true}
+  },
   "variants": {
-    "normal": {
-      "model": "spring_bowel:test.obj",
-      "custom": {
-        "flip-v": true
-      }
+    "facing": {
+      "west": {"y": 0},
+      "south": {"y": 270},
+      "east": {"y": 180},
+      "north": {"y": 90}
     }
   }
 }
