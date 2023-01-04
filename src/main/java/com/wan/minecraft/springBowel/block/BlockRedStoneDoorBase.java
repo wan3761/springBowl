@@ -3,6 +3,7 @@ package com.wan.minecraft.springBowel.block;
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.proxy.IHasAItemBLock;
 import com.wan.minecraft.springBowel.proxy.IWanBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneDiode;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
@@ -21,15 +22,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public abstract class BlockRedStoneDoorBase extends BlockRedstoneDiode implements IWanBlock, IHasAItemBLock {
     public static final PropertyBool POWERED = PropertyBool.create("powered");
 
-    private final ItemBlock itemBlock = (ItemBlock) new ItemBlock(this).setRegistryName(this.getRegistryName().toString()).setUnlocalizedName(this.getUnlocalizedName());
+    protected ItemBlock itemBlock;
 
     @Override
     public ItemBlock getItemBlock() {
         return itemBlock;
     }
-
     private BlockRedStoneDoorBase power = null;
     private BlockRedStoneDoorBase unpower = null;
+
+    @Override
+    public Block createItemBlock() {
+        this.itemBlock=(ItemBlock) new ItemBlock(this).setRegistryName(this.getRegistryName().toString()).setUnlocalizedName(this.getUnlocalizedName());
+        return this;
+    }
 
     protected BlockRedStoneDoorBase(boolean powered) {
         super(powered);

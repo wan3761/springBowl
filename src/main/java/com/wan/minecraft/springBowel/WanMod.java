@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
+
 @Mod(modid = WanMod.MODID, name = WanMod.NAME, version = WanMod.VERSION)
 public class WanMod {
 

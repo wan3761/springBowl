@@ -1,7 +1,10 @@
 package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.block.AndDoor;
 import com.wan.minecraft.springBowel.block.BlockLists;
+import com.wan.minecraft.springBowel.block.OrDoor;
+import com.wan.minecraft.springBowel.block.XorDoor;
 import com.wan.minecraft.springBowel.item.face.*;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -46,10 +49,10 @@ public class ItemLists {
     public static final WanModItemBase          silent      = new Silent();
 
     public static final WanModItemArmorBase     kingHat     = new KingHatItemBlock(ItemArmor.ArmorMaterial.GOLD, 0, EntityEquipmentSlot.HEAD);
-    public static final ItemBlock               AND_DOOR    = BlockLists.POWER_AND_DOOR.getItemBlock();
-    public static final ItemBlock               OR_DOOR     = BlockLists.POWER_OR_DOOR.getItemBlock();
+    public static final ItemBlock               AND_DOOR    = ((AndDoor)BlockLists.POWER_AND_DOOR).getItemBlock();
+    public static final ItemBlock               OR_DOOR     = ((OrDoor)BlockLists.POWER_OR_DOOR).getItemBlock();
     //TODO 以下物品的模型
-    public static final ItemBlock               XOR_DOOR    = BlockLists.POWER_XOR_DOOR.getItemBlock();
+    public static final ItemBlock               XOR_DOOR    = ((XorDoor)BlockLists.POWER_XOR_DOOR).getItemBlock();
     public static final NotDoor                 NOT_DOOR    = ((com.wan.minecraft.springBowel.block.NotDoor)BlockLists.POWER_NOT_DOOR).getItemBlock();
 
 

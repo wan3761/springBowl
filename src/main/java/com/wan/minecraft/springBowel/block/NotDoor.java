@@ -13,7 +13,13 @@ public class NotDoor extends BlockRedStoneDoorBase {
         super(powered);
     }
 
-    private final com.wan.minecraft.springBowel.item.NotDoor itemBlock = (com.wan.minecraft.springBowel.item.NotDoor) new com.wan.minecraft.springBowel.item.NotDoor(this).setRegistryName(this.getRegistryName().toString()).setUnlocalizedName(this.getUnlocalizedName());
+    protected com.wan.minecraft.springBowel.item.NotDoor itemBlock;
+
+    @Override
+    public Block createItemBlock() {
+        itemBlock = (com.wan.minecraft.springBowel.item.NotDoor) new com.wan.minecraft.springBowel.item.NotDoor(this).setRegistryName(this.getRegistryName().toString()).setUnlocalizedName(this.getUnlocalizedName());
+        return this;
+    }
 
     @Override
     public com.wan.minecraft.springBowel.item.NotDoor getItemBlock() {
