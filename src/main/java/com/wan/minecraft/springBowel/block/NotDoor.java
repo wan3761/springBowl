@@ -7,6 +7,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+//TODO 修复以下类在输入和输出端被连接时的死递归bug
 public class NotDoor extends BlockRedStoneDoorBase {
     protected NotDoor(boolean powered) {
         super(powered);
