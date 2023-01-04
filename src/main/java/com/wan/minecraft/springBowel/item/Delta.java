@@ -1,12 +1,12 @@
 package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Delta extends Item {
+public class Delta extends WanModItemBase implements IHasAModel {
 
     public Delta() {
         this.setRegistryName("spring_bowel:delta").setCreativeTab(WanMod.springBowl).setUnlocalizedName("spring_bowel.delta");

@@ -2,7 +2,9 @@ package com.wan.minecraft.springBowel.listener;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -17,7 +19,11 @@ public class ModelMapper {
     public static void onModelReg(ModelRegistryEvent event) {
         OBJLoader.INSTANCE.addDomain(WanMod.MODID);
         for (Item item : ItemLists.ItemList) {
-            ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+            if (item instanceof IHasAModel) {
+                ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+            }else {
+                ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(ItemLists.zjp.getRegistryName(), "inventory"));
+            }
         }
     }
 }

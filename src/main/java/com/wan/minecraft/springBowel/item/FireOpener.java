@@ -2,15 +2,15 @@ package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.listener.SoundRegister;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class FireOpener extends Item {
+public class FireOpener extends WanModItemBase implements IHasAModel {
 
     public FireOpener() {
         this.setRegistryName("spring_bowel:fire_opener").setCreativeTab(WanMod.springBowl).setUnlocalizedName("spring_bowel.fire_opener");

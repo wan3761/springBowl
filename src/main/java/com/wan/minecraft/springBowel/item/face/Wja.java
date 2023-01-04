@@ -2,14 +2,16 @@ package com.wan.minecraft.springBowel.item.face;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.WanModItemBase;
 import com.wan.minecraft.springBowel.listener.SoundRegister;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Wja extends Item {
+public class Wja extends WanModItemBase implements IHasAModel {
     public Wja() {
         this.setRegistryName("spring_bowel:wja").setCreativeTab(WanMod.springBowlFace).setUnlocalizedName("spring_bowel.wja");
     }

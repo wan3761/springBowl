@@ -2,6 +2,7 @@
   "compatibilityLevel": "JAVA_8",
   "package": "com.wan.minecraft.springBowel.mixin",
   "mixins": [
+    "MixinBlockRedwire",
     "MixinEntityAICreeperSwell",
     "MixinEntityCreeper"
   ],

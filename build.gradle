@@ -15,7 +15,7 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '2.5'
+version = '2.5.2'
 group = 'com.wan.springBowel' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'spring_bowel'
 

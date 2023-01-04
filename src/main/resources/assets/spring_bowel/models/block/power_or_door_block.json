@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "spring_bowel:blocks/or_door_up",
+    "down": "spring_bowel:blocks/door_other_power",
+    "up": "spring_bowel:blocks/or_door_up",
+    "east": "spring_bowel:blocks/door_other_power",
+    "north": "spring_bowel:blocks/door_input",
+    "west": "spring_bowel:blocks/door_input",
+    "south":  "spring_bowel:blocks/door_output"
+  }
+}

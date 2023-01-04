@@ -1,9 +1,9 @@
 package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
-import net.minecraft.item.Item;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 
-public class Forge extends Item {
+public class Forge extends WanModItemBase implements IHasAModel {
 
     public Forge() {
         this.setRegistryName("spring_bowel:forge").setCreativeTab(WanMod.springBowl).setUnlocalizedName("spring_bowel.forge");

@@ -1,16 +1,16 @@
 package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-public class GTX690 extends Item {
+public class GTX690 extends WanModItemBase implements IHasAModel {
 
     public GTX690() {
         this.setRegistryName("spring_bowel:GTX690").setCreativeTab(WanMod.springBowl).setUnlocalizedName("spring_bowel.GTX690");

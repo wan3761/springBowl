@@ -2,14 +2,18 @@ package com.wan.minecraft.springBowel.item.face;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.WanModItemFoodBase;
 import com.wan.minecraft.springBowel.listener.SoundRegister;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.event.RegistryEvent;
 
-public class Cyj extends ItemFood {
+public class Cyj extends WanModItemFoodBase implements IHasAModel {
 
 
     public Cyj(int amount, float saturation, boolean isWolfFood) {
@@ -57,4 +61,6 @@ public class Cyj extends ItemFood {
         player.setHealth(0);
         player.setFire(114514);
     }
+
+
 }

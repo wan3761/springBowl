@@ -1,17 +1,17 @@
 package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class DingDing extends Item {
+public class DingDing extends WanModItemBase implements IHasAModel {
 
     public DingDing() {
         this.setRegistryName("spring_bowel:dingding").setCreativeTab(WanMod.springBowl).setUnlocalizedName("spring_bowel.ding");

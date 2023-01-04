@@ -1,6 +1,7 @@
 package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,7 +10,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-public class UselessThing extends Item {
+public class UselessThing extends WanModItemBase implements IHasAModel {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {

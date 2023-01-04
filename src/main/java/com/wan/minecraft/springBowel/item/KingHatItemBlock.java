@@ -2,6 +2,7 @@ package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.block.BlockLists;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -22,7 +23,7 @@ import net.minecraft.world.World;
 
 import static net.minecraft.item.ItemBlock.setTileEntityNBT;
 
-public class KingHatItemBlock extends ItemArmor {
+public class KingHatItemBlock extends WanModItemArmorBase implements IHasAModel {
 
     public KingHatItemBlock(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
         super(materialIn, renderIndexIn, equipmentSlotIn);
@@ -30,6 +31,7 @@ public class KingHatItemBlock extends ItemArmor {
         this.setUnlocalizedName("spring_bowel.king_hat");
         this.setCreativeTab(WanMod.springBowl);
     }
+
 
 
     @Override

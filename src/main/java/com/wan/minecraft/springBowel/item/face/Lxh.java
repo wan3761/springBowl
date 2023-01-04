@@ -2,6 +2,9 @@ package com.wan.minecraft.springBowel.item.face;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.WanModItemBase;
+import com.wan.minecraft.springBowel.item.WanModItemFoodBase;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -10,7 +13,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
-public class Lxh extends Item {
+public class Lxh extends WanModItemBase implements IHasAModel {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
@@ -40,7 +43,7 @@ public class Lxh extends Item {
         } else {
             return super.onItemRightClick(worldIn, playerIn, handIn);
         }
-        playerIn.inventory.addItemStackToInventory(new ItemStack(ItemLists.usb));
+        playerIn.inventory.addItemStackToInventory(new ItemStack( ItemLists.usb));
         if (worldIn.isRemote) {
             playerIn.sendMessage(new TextComponentString("获得64G 114Mb/s U盘一个"));
             playerIn.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.experience_orb.pickup")), 1, 1);

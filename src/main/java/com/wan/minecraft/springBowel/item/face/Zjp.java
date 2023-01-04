@@ -2,8 +2,10 @@ package com.wan.minecraft.springBowel.item.face;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.WanModItemFoodBase;
 import com.wan.minecraft.springBowel.listener.SoundRegister;
 import com.wan.minecraft.springBowel.potion.PotionLists;
+import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -12,7 +14,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class Zjp extends ItemFood {
+public class Zjp extends WanModItemFoodBase implements IHasAModel {
     public Zjp(int amount, float saturation, boolean isWolfFood) {
         super(amount, saturation, isWolfFood);
         this.setAlwaysEdible();
