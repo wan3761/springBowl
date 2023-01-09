@@ -2,6 +2,8 @@ package com.wan.minecraft.springBowel.block;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.KingHatItemBlock;
+import com.wan.minecraft.springBowel.proxy.WanModBlock;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -16,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+@WanModBlock
 public class KingHat extends WanModBlockBase {
 
     private static final IProperty<EnumFacing> FACING = PropertyDirection.create("facing",EnumFacing.Plane.HORIZONTAL);
@@ -37,7 +40,7 @@ public class KingHat extends WanModBlockBase {
 
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        drops.add(new ItemStack(ItemLists.kingHat));
+        drops.add(new ItemStack(ItemLists.get(KingHatItemBlock.class)));
     }
 
 

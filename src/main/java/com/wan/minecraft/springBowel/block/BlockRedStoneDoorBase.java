@@ -24,6 +24,10 @@ public abstract class BlockRedStoneDoorBase extends BlockRedstoneDiode implement
 
     protected ItemBlock itemBlock;
 
+    public BlockRedStoneDoorBase() {
+        super(false);
+    }
+
     @Override
     public ItemBlock getItemBlock() {
         return itemBlock;

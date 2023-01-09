@@ -14,12 +14,13 @@ import org.lwjgl.Sys;
 //@Mod.EventBusSubscriber(modid = WanMod.MODID)
 public class BlockRegister {
     @SubscribeEvent
-    public static void registerItem(RegistryEvent.Register<Block> event) {
+    public static void registerBlock(RegistryEvent.Register<Block> event) {
         BlockLists blockLists = new BlockLists();
-        for (Block block : BlockLists.BlockList) {
-            if (block instanceof IWanBlock){
+        for (Block block : BlockLists.allItems()) {
+            WanMod.logger.info(block.getRegistryName());
+            if (block instanceof IWanBlock) {
                 ((IWanBlock) block).registryMyself(event);
-            }else {
+            } else {
                 event.getRegistry().register(block);
             }
             if (block instanceof IHasATileEntity) {

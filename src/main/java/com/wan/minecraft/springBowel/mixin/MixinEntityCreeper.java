@@ -2,6 +2,7 @@ package com.wan.minecraft.springBowel.mixin;
 
 import com.wan.minecraft.springBowel.event.CreeperExplosionEvent;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.Silent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
@@ -66,7 +67,7 @@ public abstract class MixinEntityCreeper {
             }
         }
 
-        if (itemstack.getItem() == ItemLists.silent) {
+        if (itemstack.getItem() == ItemLists.get(Silent.class)) {
             ((EntityCreeper) (Object) this).world.playSound(player, ((EntityCreeper) (Object) this).posX, ((EntityCreeper) (Object) this).posY, ((EntityCreeper) (Object) this).posZ, SoundEvents.ITEM_FLINTANDSTEEL_USE, ((EntityCreeper) (Object) this).getSoundCategory(), 1.0F, this.rand.nextFloat() * 0.4F + 0.8F);
             player.swingArm(hand);
 

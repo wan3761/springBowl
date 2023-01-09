@@ -2,6 +2,7 @@ package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -10,6 +11,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
+@WanModItem
 public class GTX690 extends WanModItemBase implements IHasAModel {
 
     public GTX690() {

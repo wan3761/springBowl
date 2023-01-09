@@ -3,6 +3,7 @@ package com.wan.minecraft.springBowel.item.face;
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.WanModItemBase;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -11,7 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
-
+@WanModItem
 public class Zip extends WanModItemBase implements IHasAModel {
     public Zip() {
         this.setRegistryName("spring_bowel:zip").setCreativeTab(WanMod.springBowlFace).setUnlocalizedName("spring_bowel.zip");

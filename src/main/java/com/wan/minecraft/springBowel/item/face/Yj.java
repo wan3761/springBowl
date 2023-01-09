@@ -1,11 +1,14 @@
 package com.wan.minecraft.springBowel.item.face;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.item.DingDing;
 import com.wan.minecraft.springBowel.item.ItemLists;
 import com.wan.minecraft.springBowel.item.WanModItemBase;
 import com.wan.minecraft.springBowel.item.WanModItemFoodBase;
 import com.wan.minecraft.springBowel.potion.PotionLists;
+import com.wan.minecraft.springBowel.potion.Silent;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -13,13 +16,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-
+@WanModItem
 public class Yj extends WanModItemFoodBase implements IHasAModel {
 
     public Yj(int amount, float saturation, boolean isWolfFood) {
         super(amount, saturation, isWolfFood);
         this.setAlwaysEdible();
         this.setRegistryName("spring_bowel:yj").setCreativeTab(WanMod.springBowlFace).setUnlocalizedName("spring_bowel.yj");
+    }
+
+    public Yj(){
+        this(5, true);
     }
 
     public Yj(int amount, boolean isWolfFood) {
@@ -48,10 +55,10 @@ public class Yj extends WanModItemFoodBase implements IHasAModel {
         boolean b = false;
         for (ItemStack itemStack : player.inventory.mainInventory) {
             a = false;
-            if (itemStack.getItem() == ItemLists.ding) {
+            if (itemStack.getItem() == ItemLists.get(DingDing.class)) {
                 a = true;
             }
-            if (itemStack.getItem() == ItemLists.silent) {
+            if (itemStack.getItem() == ItemLists.get(com.wan.minecraft.springBowel.item.Silent.class)) {
                 b = true;
             }
         }

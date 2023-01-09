@@ -2,6 +2,7 @@ package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Biomes;
@@ -11,6 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
+@WanModItem
 public class DingDing extends WanModItemBase implements IHasAModel {
 
     public DingDing() {

@@ -2,7 +2,9 @@ package com.wan.minecraft.springBowel.item;
 
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.block.BlockLists;
+import com.wan.minecraft.springBowel.block.KingHat;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -23,6 +25,7 @@ import net.minecraft.world.World;
 
 import static net.minecraft.item.ItemBlock.setTileEntityNBT;
 
+@WanModItem
 public class KingHatItemBlock extends WanModItemArmorBase implements IHasAModel {
 
     public KingHatItemBlock(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn) {
@@ -32,7 +35,9 @@ public class KingHatItemBlock extends WanModItemArmorBase implements IHasAModel 
         this.setCreativeTab(WanMod.springBowl);
     }
 
-
+    public KingHatItemBlock(){
+        this(ItemArmor.ArmorMaterial.GOLD, 0, EntityEquipmentSlot.HEAD);
+    }
 
     @Override
     public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
@@ -44,9 +49,9 @@ public class KingHatItemBlock extends WanModItemArmorBase implements IHasAModel 
         if (!world.setBlockState(pos, newState, 11)) return false;
 
         IBlockState state = world.getBlockState(pos);
-        if (state.getBlock() == BlockLists.kingHat) {
+        if (state.getBlock() == BlockLists.get(KingHat.class)) {
             setTileEntityNBT(world, player, pos, stack);
-            BlockLists.kingHat.onBlockPlacedBy(world, pos, state, player, stack);
+            BlockLists.get(KingHat.class).onBlockPlacedBy(world, pos, state, player, stack);
 
             if (player instanceof EntityPlayerMP)
                 CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP) player, pos, stack);
@@ -66,9 +71,9 @@ public class KingHatItemBlock extends WanModItemArmorBase implements IHasAModel 
 
         ItemStack itemstack = player.getHeldItem(hand);
 
-        if (!itemstack.isEmpty() && player.canPlayerEdit(pos, facing, itemstack) && worldIn.mayPlace(BlockLists.kingHat, pos, false, facing, player)) {
+        if (!itemstack.isEmpty() && player.canPlayerEdit(pos, facing, itemstack) && worldIn.mayPlace(BlockLists.get(KingHat.class), pos, false, facing, player)) {
             int i = this.getMetadata(itemstack.getMetadata());
-            IBlockState iblockstate1 = BlockLists.kingHat.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, i, player, hand);
+            IBlockState iblockstate1 = BlockLists.get(KingHat.class).getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, i, player, hand);
 
             if (placeBlockAt(itemstack, player, worldIn, pos, facing, hitX, hitY, hitZ, iblockstate1)) {
                 iblockstate1 = worldIn.getBlockState(pos);

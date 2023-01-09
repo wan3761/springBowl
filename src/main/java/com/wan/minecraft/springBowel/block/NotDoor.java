@@ -1,5 +1,7 @@
 package com.wan.minecraft.springBowel.block;
 
+import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.proxy.WanModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemBlock;
@@ -8,9 +10,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 //TODO 修复以下类在输入和输出端被连接时的死递归bug
+@WanModBlock
 public class NotDoor extends BlockRedStoneDoorBase {
     protected NotDoor(boolean powered) {
         super(powered);
+    }
+
+    public NotDoor(){
+        super(false);
+        this.setRegistryName(WanMod.MODID, "power_not_door_block").setUnlocalizedName("spring_bowel.not_door_item");
     }
 
     protected com.wan.minecraft.springBowel.item.NotDoor itemBlock;
@@ -36,14 +44,14 @@ public class NotDoor extends BlockRedStoneDoorBase {
     protected IBlockState getPoweredState(IBlockState unpoweredState) {
         EnumFacing facing = unpoweredState.getValue(FACING);
         boolean bool = unpoweredState.getValue(POWERED);
-        return BlockLists.POWER_NOT_DOOR.getDefaultState().withProperty(FACING,facing).withProperty(POWERED,bool);
+        return BlockLists.get(this.getClass()).getDefaultState().withProperty(FACING,facing).withProperty(POWERED,bool);
     }
 
     @Override
     protected IBlockState getUnpoweredState(IBlockState poweredState) {
         EnumFacing facing = poweredState.getValue(FACING);
         boolean bool = poweredState.getValue(POWERED);
-        return BlockLists.POWER_NOT_DOOR.getDefaultState().withProperty(FACING,facing).withProperty(POWERED,bool);
+        return BlockLists.get(this.getClass()).getDefaultState().withProperty(FACING,facing).withProperty(POWERED,bool);
     }
 
     @Override

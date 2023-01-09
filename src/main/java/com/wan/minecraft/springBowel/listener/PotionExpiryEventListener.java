@@ -2,6 +2,7 @@ package com.wan.minecraft.springBowel.listener;
 
 import com.wan.minecraft.springBowel.item.ItemLists;
 import com.wan.minecraft.springBowel.potion.PotionLists;
+import com.wan.minecraft.springBowel.potion.Silent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentString;
@@ -17,10 +18,10 @@ public class PotionExpiryEventListener {
             if (event.getEntity() instanceof EntityPlayer) {
                 boolean a = false;
                 for (ItemStack itemStack : ((EntityPlayer) event.getEntity()).inventory.mainInventory) {
-                    if (itemStack.getItem() == ItemLists.silent) a = true;
+                    if (itemStack.getItem() == ItemLists.get(Silent.class)) a = true;
                 }
                 if (a) return;
-                ((EntityPlayer) event.getEntity()).inventory.addItemStackToInventory(new ItemStack(ItemLists.silent));
+                ((EntityPlayer) event.getEntity()).inventory.addItemStackToInventory(new ItemStack(ItemLists.get(Silent.class)));
                 ((EntityPlayer) event.getEntity()).sendMessage(new TextComponentString("你已被给予沉默*1"));
             }
         }
