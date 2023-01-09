@@ -12,12 +12,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ItemRegister {
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> event) {
-        for (Item item : ItemLists.ItemList) {
+        for (Item item : ItemLists.allItems()) {
+            //WanMod.logger.info(item.getRegistryName());
             if (item instanceof IWanModItem){
                 ((IWanModItem) item).registryMyself(event);
             }else {
                 event.getRegistry().register(item);
             }
         }
+
     }
 }

@@ -1,5 +1,7 @@
 package com.wan.minecraft.springBowel.block;
 
+import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.proxy.WanModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRedstoneDiode;
 import net.minecraft.block.properties.PropertyBool;
@@ -15,23 +17,30 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class OrDoor extends BlockRedStoneDoorBase{
+@WanModBlock
+public class OrDoor extends BlockRedStoneDoorBase {
     protected OrDoor(boolean powered) {
         super(powered);
     }
 
+    public OrDoor(){
+        super(false);
+        this.setRegistryName(WanMod.MODID, "power_or_door_block").setUnlocalizedName("spring_bowel.or_item");
+    }
+
     @Override
+
     protected IBlockState getPoweredState(IBlockState unpoweredState) {
         EnumFacing facing = unpoweredState.getValue(FACING);
         boolean bool = unpoweredState.getValue(POWERED);
-        return BlockLists.POWER_OR_DOOR.getDefaultState().withProperty(FACING,facing).withProperty(POWERED,bool);
+        return BlockLists.get(this.getClass()).getDefaultState().withProperty(FACING, facing).withProperty(POWERED, bool);
     }
 
     @Override
     protected IBlockState getUnpoweredState(IBlockState poweredState) {
         EnumFacing facing = poweredState.getValue(FACING);
         boolean bool = poweredState.getValue(POWERED);
-        return BlockLists.POWER_OR_DOOR.getDefaultState().withProperty(FACING,facing).withProperty(POWERED,bool);
+        return BlockLists.get(this.getClass()).getDefaultState().withProperty(FACING, facing).withProperty(POWERED, bool);
     }
 
     @Override

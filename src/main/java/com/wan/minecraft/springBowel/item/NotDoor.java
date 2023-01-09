@@ -1,5 +1,6 @@
 package com.wan.minecraft.springBowel.item;
 
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemBlock;
@@ -9,6 +10,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
+@WanModItem
 public class NotDoor extends WanModItemBlockBase {
     public NotDoor(Block block) {
         super(block);

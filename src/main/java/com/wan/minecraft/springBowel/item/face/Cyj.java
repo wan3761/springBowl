@@ -1,10 +1,12 @@
 package com.wan.minecraft.springBowel.item.face;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.item.DingDing;
 import com.wan.minecraft.springBowel.item.ItemLists;
 import com.wan.minecraft.springBowel.item.WanModItemFoodBase;
 import com.wan.minecraft.springBowel.listener.SoundRegister;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
+import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -13,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 
+@WanModItem
 public class Cyj extends WanModItemFoodBase implements IHasAModel {
 
 
@@ -36,7 +39,7 @@ public class Cyj extends WanModItemFoodBase implements IHasAModel {
         }
         ItemStack ding = null;
         for (ItemStack itemStack : player.inventory.mainInventory) {
-            if (itemStack.getItem() == ItemLists.ding) {
+            if (itemStack.getItem() == ItemLists.get(DingDing.class)) {
 
 
                 worldIn.createExplosion(entityIn, entityIn.posX, entityIn.posY, entityIn.posZ, 5, true);
