@@ -31,6 +31,10 @@ public class Cyj extends WanModItemFoodBase implements IHasAModel {
         this.setRegistryName("spring_bowel:cyj").setCreativeTab(WanMod.springBowlFace).setUnlocalizedName("spring_bowel.cyj");
     }
 
+    public Cyj(){
+        this(5,false);
+    }
+
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         EntityPlayer player = null;

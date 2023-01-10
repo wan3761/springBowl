@@ -1,9 +1,8 @@
 package com.wan.minecraft.springBowel.item;
 
-import com.wan.minecraft.springBowel.block.AndDoor;
-import com.wan.minecraft.springBowel.block.BlockLists;
-import com.wan.minecraft.springBowel.block.OrDoor;
-import com.wan.minecraft.springBowel.block.XorDoor;
+import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.block.*;
+import com.wan.minecraft.springBowel.listener.SoundRegister;
 import com.wan.minecraft.springBowel.proxy.ReflexUtil;
 import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.item.Item;
@@ -18,11 +17,14 @@ public class ItemLists {
     public static final HashMap<Class, Item> ItemList = new HashMap<>();
     public static final HashMap<String, Item> ItemListByString = new HashMap<>();
 
+
+    public static final ItemBlock               LOCK        = (ItemBlock) new ItemBlock(BlockLists.get(Locker.class)).setRegistryName(WanMod.MODID,"locker_block");
     public static final ItemBlock               AND_DOOR    = ((AndDoor)BlockLists.BlockList.get(AndDoor.class)).getItemBlock();
     public static final ItemBlock               OR_DOOR     = ((OrDoor)BlockLists.BlockList.get(OrDoor.class)).getItemBlock();
     //TODO 以下物品的模型
     public static final ItemBlock               XOR_DOOR    = ((XorDoor)BlockLists.BlockList.get(XorDoor.class)).getItemBlock();
     public static final NotDoor                 NOT_DOOR    = ((com.wan.minecraft.springBowel.block.NotDoor)BlockLists.BlockList.get(com.wan.minecraft.springBowel.block.NotDoor.class)).getItemBlock();
+    public static final WanRecordBase           BAG         = (WanRecordBase) new WanRecordBase("spring_bowel.where_is_my_bag", SoundRegister.WHERE_IS_MY_BAG).setRegistryName("spring_bowel:where_is_my_bag").setCreativeTab(WanMod.springBowl).setUnlocalizedName("spring_bowel.where_is_my_bag");
 
     public static Item get(Class clazz) {
         return ItemList.get(clazz);

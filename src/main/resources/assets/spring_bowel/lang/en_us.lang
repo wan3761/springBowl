@@ -31,8 +31,13 @@ itemGroup.Spring_Bowl=某革命组织春碗的道具
 itemGroup.Spring_Bowl_Face=某革命组织春碗的成员
 spring_bowel.pujipa_sound=噗叽啪（迫真）
 spring_bowel.cyj_no_xiao=这个真的难绷
+spring_bowel.where_is_my_bag=§3wja处型曲
 
 tile.spring_bowel.and_door_item.name=&与门&
 tile.spring_bowel.or_item.name=|或门|
 tile.spring_bowel.not_door_item.name=!非门!
 tile.spring_bowel.xor_door_item.name=|异或门|
+item.spring_bowel.where_is_my_bag.name=§3wja处型曲
+
+item.record.spring_bowel.where_is_my_bag.desc=3wja处型曲
+tile.spring_bowel.locker.name=储物柜
