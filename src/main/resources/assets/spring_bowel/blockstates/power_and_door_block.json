@@ -1,7 +1,8 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "spring_bowel:power_and_door_block"
+    "model": "spring_bowel:unpower_and_door_block.obj",
+    "custom": {"flip-v": true}
   },
   "variants":{
     "facing": {
@@ -11,8 +12,8 @@
       "east": { "y": 90 }
     },
     "powered": {
-      "false": {"model": "spring_bowel:unpower_and_door_block"},
-      "true": {"model": "spring_bowel:power_and_door_block"}
+      "false": {"model": "spring_bowel:unpower_and_door_block.obj"},
+      "true": {"model": "spring_bowel:power_and_door_block.obj"}
     }
   }
 }

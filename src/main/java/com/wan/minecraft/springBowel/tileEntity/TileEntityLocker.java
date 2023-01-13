@@ -1,8 +1,11 @@
 package com.wan.minecraft.springBowel.tileEntity;
 
 import javax.annotation.Nullable;
+
+import com.wan.minecraft.springBowel.block.Locker;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
@@ -48,6 +51,10 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
         this.password = String.valueOf((int) (Math.random()*114514+19198));
     }
 
+    public void restPassword(){
+        this.password = "0";
+    }
+
     public TileEntityLocker()
     {
     }
@@ -89,7 +96,7 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
     {
         super.readFromNBT(compound);
         this.chestContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
-
+        this.password = compound.getString("pwd");
         if (!this.checkLootAndRead(compound))
         {
             ItemStackHelper.loadAllItems(compound, this.chestContents);
@@ -104,7 +111,7 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
     public NBTTagCompound writeToNBT(NBTTagCompound compound)
     {
         super.writeToNBT(compound);
-
+        compound.setString("pwd",password);
         if (!this.checkLootAndWrite(compound))
         {
             ItemStackHelper.saveAllItems(compound, this.chestContents);
@@ -337,6 +344,9 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
             }
 
             ++this.numPlayersUsing;
+
+
+
             this.world.addBlockEvent(this.pos, this.getBlockType(), 1, this.numPlayersUsing);
             this.world.notifyNeighborsOfStateChange(this.pos, this.getBlockType(), false);
 
@@ -344,6 +354,7 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
             {
                 this.world.notifyNeighborsOfStateChange(this.pos.down(), this.getBlockType(), false);
             }
+
         }
     }
 
@@ -352,6 +363,9 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
         if (!player.isSpectator() && this.getBlockType() instanceof BlockChest)
         {
             --this.numPlayersUsing;
+
+
+
             this.world.addBlockEvent(this.pos, this.getBlockType(), 1, this.numPlayersUsing);
             this.world.notifyNeighborsOfStateChange(this.pos, this.getBlockType(), false);
 
@@ -359,6 +373,7 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
             {
                 this.world.notifyNeighborsOfStateChange(this.pos.down(), this.getBlockType(), false);
             }
+
         }
     }
 

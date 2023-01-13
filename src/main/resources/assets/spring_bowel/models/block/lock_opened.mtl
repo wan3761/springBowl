@@ -1,6 +1,6 @@
 # Made in Blockbench 4.5.2
 newmtl m_b43e992a-1207-d541-a7e9-1d54dcc30269
-map_Kd spring_bowel:blocks/door.png
+map_Kd spring_bowel:blocks/door
 newmtl m_03057a45-e5c3-9407-dc70-a2c7876ffdee
-map_Kd spring_bowel:blocks/iron.png
+map_Kd spring_bowel:blocks/iron
 newmtl none

@@ -1,6 +1,8 @@
 package com.wan.minecraft.springBowel.block;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.PasswordPaper;
 import com.wan.minecraft.springBowel.proxy.IHasATileEntity;
 import com.wan.minecraft.springBowel.proxy.WanModBlock;
 import com.wan.minecraft.springBowel.tileEntity.TileEntityLocker;
@@ -19,6 +21,7 @@ import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryLargeChest;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
@@ -33,6 +36,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
 
 @WanModBlock
 public class Locker extends BlockContainer implements IHasATileEntity {
@@ -104,6 +108,8 @@ public class Locker extends BlockContainer implements IHasATileEntity {
         return this.isBelowSolidBlock(worldIn, pos) || this.isOcelotSittingOnChest(worldIn, pos);
     }
 
+
+
     @Nullable
     public ILockableContainer getContainer(World worldIn, BlockPos pos, boolean allowBlocking)
     {
@@ -161,22 +167,40 @@ public class Locker extends BlockContainer implements IHasATileEntity {
         {
             ILockableContainer ilockablecontainer = this.getLockableContainer(worldIn, pos);
 
-            String pwd = playerIn.getHeldItem(EnumHand.MAIN_HAND).getDisplayName();
             TileEntityLocker tileEntityLocker = (TileEntityLocker) worldIn.getTileEntity(pos);
-
-            if (!tileEntityLocker.getPassword().equals("0")){
-                if(!pwd.equals(tileEntityLocker.getPassword())){
+            String pwd = tileEntityLocker.getPassword();
+            boolean flag = false;
+            if (!pwd.equals("0")){
+                ItemStack itemStack = playerIn.getHeldItem(EnumHand.MAIN_HAND);
+                if (itemStack.getTagCompound() == null){
                     return false;
                 }
-            }
 
-            
+                if (!(itemStack.getItem() == ItemLists.get(PasswordPaper.class) && itemStack.getTagCompound().getString("pwd").equals(pwd))){
+                    return false;
+                }
+
+            }else {
+                if (playerIn.getHeldItem(EnumHand.MAIN_HAND).getItem() == ItemLists.get(PasswordPaper.class)){
+                    return false;
+                }
+                tileEntityLocker.setPassword();
+                NBTTagCompound nbt = new NBTTagCompound();
+                nbt.setString("pwd",tileEntityLocker.getPassword());
+                ItemStack i = new ItemStack(ItemLists.get(PasswordPaper.class));
+                i.setTagCompound(nbt);
+                playerIn.inventory.addItemStackToInventory(i);
+                flag=true;
+            }
 
             if (ilockablecontainer != null)
             {
                 playerIn.displayGUIChest(ilockablecontainer);
 
-
+                if (!flag) {
+                    playerIn.getHeldItem(EnumHand.MAIN_HAND).shrink(1);
+                    tileEntityLocker.restPassword();
+                }
                     //playerIn.addStat(StatList.CHEST_OPENED);
 
             }

@@ -37,7 +37,9 @@ tile.spring_bowel.and_door_item.name=&与门&
 tile.spring_bowel.or_item.name=|或门|
 tile.spring_bowel.not_door_item.name=!非门!
 tile.spring_bowel.xor_door_item.name=|异或门|
-item.spring_bowel.where_is_my_bag.name=§3wja处型曲
+item.spring_bowel.where_is_my_bag.name=§3wja处刑曲
 
-item.record.spring_bowel.where_is_my_bag.desc=3wja处型曲
+item.record.spring_bowel.where_is_my_bag.desc=wja处刑曲
+
+item.spring_bowel.password_paper.name=密码纸
 tile.spring_bowel.locker.name=储物柜

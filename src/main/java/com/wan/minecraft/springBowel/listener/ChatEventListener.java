@@ -1,19 +1,25 @@
 package com.wan.minecraft.springBowel.listener;
 
 import com.wan.minecraft.springBowel.potion.PotionLists;
+import net.minecraft.client.Minecraft;
+import net.minecraft.command.ServerCommandManager;
+import net.minecraft.command.server.CommandBanIp;
+import net.minecraft.command.server.CommandBanPlayer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
 import net.minecraftforge.event.CommandEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
-@Mod.EventBusSubscriber
 public class ChatEventListener {
 
     private static String getRandomChar() {
@@ -37,6 +43,7 @@ public class ChatEventListener {
         }
         return str;
     }
+
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onPlayerSendMessage(CommandEvent event) {

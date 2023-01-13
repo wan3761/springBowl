@@ -1,0 +1,8 @@
+# Made in Blockbench 4.5.2
+newmtl m_bb6084bd-0937-76fa-ddb6-c00b3c8493e8
+map_Kd spring_bowel:blocks/stone_on_side
+newmtl m_40a1f14e-f389-9f22-7868-0e2164e19b05
+map_Kd spring_bowel:blocks/or_top_light
+newmtl m_18519f60-88fe-846f-3949-473e65b71b50
+map_Kd spring_bowel:blocks/light
+newmtl none
