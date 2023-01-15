@@ -23,7 +23,7 @@ public class FireOpener extends WanModItemBase implements IHasAModel {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         worldIn.createExplosion(playerIn, playerIn.posX, playerIn.posY, playerIn
-                .posZ, 5, true);
+                .posZ, 5, false);
         playerIn.playSound(SoundRegister.PUJIPA_SOUND, 1, 1);
         playerIn.setHeldItem(handIn, new ItemStack(Items.AIR));
         return super.onItemRightClick(worldIn, playerIn, handIn);

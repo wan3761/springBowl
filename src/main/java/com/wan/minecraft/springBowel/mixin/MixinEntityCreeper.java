@@ -52,7 +52,7 @@ public abstract class MixinEntityCreeper {
      * @author
      * @reason no why for study
      */
-    @Overwrite
+    @Overwrite()
     protected boolean processInteract(EntityPlayer player, EnumHand hand) {
         ItemStack itemstack = player.getHeldItem(hand);
 
