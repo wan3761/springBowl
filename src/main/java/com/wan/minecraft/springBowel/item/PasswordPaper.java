@@ -33,9 +33,4 @@ public class PasswordPaper extends WanModItemBase implements IHasAModel {
         tooltip.add("密码是"+stack.getTagCompound().getString("pwd"));
         super.addInformation(stack, worldIn, tooltip, flagIn);
     }
-
-    @Override
-    public void registryModel(ModelRegistryEvent event) {
-        ModelLoader.setCustomModelResourceLocation((Item)this, 0, new ModelResourceLocation(Items.PAPER.getRegistryName(), "inventory"));
-    }
 }
