@@ -142,11 +142,11 @@ public class Locker extends BlockContainer implements IHasATileEntity {
                         {
                             if (enumfacing != EnumFacing.WEST && enumfacing != EnumFacing.NORTH)
                             {
-                                ilockablecontainer = new InventoryLargeChest("container.chestDouble", ilockablecontainer, (TileEntityChest)tileentity1);
+                                ilockablecontainer = new InventoryLargeChest("aaa", ilockablecontainer, (TileEntityChest)tileentity1);
                             }
                             else
                             {
-                                ilockablecontainer = new InventoryLargeChest("container.chestDouble", (TileEntityChest)tileentity1, ilockablecontainer);
+                                ilockablecontainer = new InventoryLargeChest("aaa", (TileEntityChest)tileentity1, ilockablecontainer);
                             }
                         }
                     }
@@ -156,6 +156,8 @@ public class Locker extends BlockContainer implements IHasATileEntity {
             }
         }
     }
+
+
 
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
