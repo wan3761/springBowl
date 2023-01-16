@@ -19,7 +19,7 @@ public class WanMod {
 
     public static final String MODID = "spring_bowel";
     public static final String NAME = "Happy New Year";
-    public static final String VERSION = "2.6.2";
+    public static final String VERSION = "2.6.5";
 
     public static Logger logger;
 
