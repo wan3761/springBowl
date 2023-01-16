@@ -43,6 +43,10 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
     private BlockChest.Type cachedChestType;
     private String password = "0";
 
+    public void setCustomName(String name){
+        this.customName=name;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -57,6 +61,8 @@ public class TileEntityLocker extends TileEntityLockableLoot implements ITickabl
 
     public TileEntityLocker()
     {
+        super();
+        this.customName="储物箱";
     }
 
     public TileEntityLocker(BlockChest.Type typeIn)

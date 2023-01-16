@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "spring_bowel:lock_closed.obj"
+  },
+  "variants":{
+    "facing": {
+      "north": { "y": 0 },
+      "south": { "y": 180 },
+      "west": { "y": 270 },
+      "east": { "y": 90 }
+    },
+    "opened": {
+      "false": {"model": "spring_bowel:lock_closed.obj"},
+      "true": {"model": "spring_bowel:lock_opened.obj"}
+    }
+  }
+}
