@@ -5,6 +5,7 @@ import com.wan.minecraft.springBowel.proxy.IHasAModel;
 import com.wan.minecraft.springBowel.proxy.WanModItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,6 +25,15 @@ public class PasswordPaper extends WanModItemBase implements IHasAModel {
         this.setMaxStackSize(1);
     }
 
+
+    @Override
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+        if (stack.getTagCompound() == null || !stack.getTagCompound().hasKey("pwd")){
+            stack.setTagCompound(new NBTTagCompound());
+            stack.getTagCompound().setString("pwd",String.valueOf((int) (Math.random()*114514+19198)));
+        }
+        super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
+    }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

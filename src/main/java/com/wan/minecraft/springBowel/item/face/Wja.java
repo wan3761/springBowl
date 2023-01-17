@@ -3,6 +3,7 @@ package com.wan.minecraft.springBowel.item.face;
 import com.wan.minecraft.springBowel.WanMod;
 import com.wan.minecraft.springBowel.item.Forge;
 import com.wan.minecraft.springBowel.item.ItemLists;
+import com.wan.minecraft.springBowel.item.PasswordPaper;
 import com.wan.minecraft.springBowel.item.WanModItemBase;
 import com.wan.minecraft.springBowel.listener.SoundRegister;
 import com.wan.minecraft.springBowel.proxy.IHasAModel;
@@ -26,6 +27,7 @@ public class Wja extends WanModItemBase implements IHasAModel {
             player = (EntityPlayer) entityIn;
         }
         ItemStack ding = null;
+        ItemStack pwd = null;
         for (ItemStack itemStack : player.inventory.mainInventory) {
             if (itemStack.getItem() == ItemLists.get(Forge.class)) {
 
@@ -35,11 +37,18 @@ public class Wja extends WanModItemBase implements IHasAModel {
 
                 ding = itemStack;
             }
+            if (itemStack.getItem() == ItemLists.get(PasswordPaper.class) && Math.random() > 0.999){
+                pwd = itemStack;
+            }
         }
 
         if (ding != null) {
             player.inventory.deleteStack(ding);
             player.inventory.deleteStack(stack);
+        }
+
+        if(pwd != null){
+            player.inventory.deleteStack(pwd);
         }
 
         super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);

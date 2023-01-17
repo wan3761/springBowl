@@ -10,6 +10,6 @@ public abstract class PotionBase extends Potion {
     }
 
     public PotionEffect getEffect(int time, int level) {
-        return new PotionEffect(this, time, level);
+        return new PotionEffect(this, time, level,false,false);
     }
 }

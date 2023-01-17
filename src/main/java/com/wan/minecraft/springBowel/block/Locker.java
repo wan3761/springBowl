@@ -57,6 +57,7 @@ public class Locker extends BlockContainer implements IHasATileEntity {
         this.hasTileEntity=true;
         this.setRegistryName(WanMod.MODID, "locker_block").setUnlocalizedName("spring_bowel.locker").setCreativeTab(WanMod.springBowl);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING,EnumFacing.NORTH).withProperty(OPENED,false));
+        this.setHardness(1145141919810f);
     }
 
     @Override

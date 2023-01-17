@@ -1,6 +1,7 @@
 package com.wan.minecraft.springBowel.block;
 
 import com.wan.minecraft.springBowel.WanMod;
+import com.wan.minecraft.springBowel.config.ModConfig;
 import com.wan.minecraft.springBowel.proxy.WanModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -14,6 +15,11 @@ import net.minecraft.world.World;
 public class NotDoor extends BlockRedStoneDoorBase {
     protected NotDoor(boolean powered) {
         super(powered);
+    }
+
+    @Override
+    protected int getDelay(IBlockState state) {
+        return ModConfig.notGateHasDelay;
     }
 
     public NotDoor(){

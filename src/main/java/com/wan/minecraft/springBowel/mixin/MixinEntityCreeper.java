@@ -1,5 +1,6 @@
 package com.wan.minecraft.springBowel.mixin;
 
+import com.wan.minecraft.springBowel.config.ModConfig;
 import com.wan.minecraft.springBowel.event.CreeperExplosionEvent;
 import com.wan.minecraft.springBowel.item.ItemLists;
 import com.wan.minecraft.springBowel.item.Silent;
@@ -44,7 +45,7 @@ public abstract class MixinEntityCreeper {
         MinecraftForge.EVENT_BUS.post(new CreeperExplosionEvent((EntityCreeper) (Object) this));
         if (((EntityCreeper) (Object) this).getCreeperState() == 2) {
             float f = ((EntityCreeper) (Object) this).getPowered() ? 2.0F : 1.0F;
-            ((EntityCreeper) (Object) this).world.createExplosion(((EntityCreeper) (Object) this), ((EntityCreeper) (Object) this).posX, ((EntityCreeper) (Object) this).posY, ((EntityCreeper) (Object) this).posZ, 204 * (float) 3 * f, flag);
+            ((EntityCreeper) (Object) this).world.createExplosion(((EntityCreeper) (Object) this), ((EntityCreeper) (Object) this).posX, ((EntityCreeper) (Object) this).posY, ((EntityCreeper) (Object) this).posZ, ModConfig.creepStrength * (float) 3 * f, flag);
         }
     }
 
